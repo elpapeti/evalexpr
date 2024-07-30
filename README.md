@@ -1,5 +1,4 @@
-Same as the original [evalexpr](https://github.com/ISibboI/evalexpr)
-But with the next modified/added operators:
+Same as the original [evalexpr](https://github.com/ISibboI/evalexpr), but with the next modified/added operators:
 
 | Operator | Precedence | Description |
 |----------|------------|-------------|
