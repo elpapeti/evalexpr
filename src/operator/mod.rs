@@ -121,7 +121,7 @@ impl Operator {
 
             Add | Sub => 95,
             Neg => 110,
-            Mul | Div | Mod => 100,
+            Mul | Div | Mod | Per | IntDiv => 100,
             Exp => 120,
 
             Eq | Neq | Gt | Lt | Geq | Leq => 80,
