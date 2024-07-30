@@ -165,7 +165,7 @@ impl Operator {
     pub(crate) const fn max_argument_amount(&self) -> Option<usize> {
         use crate::operator::Operator::*;
         match self {
-            Add | Sub | Mul | Div | Mod | Exp | Eq | Neq | Gt | Lt | Geq | Leq | And | Or
+            Add | Sub | Mul | Div | IntDiv | Per | Mod | Exp | Eq | Neq | Gt | Lt | Geq | Leq | And | Or
             | Assign | AddAssign | SubAssign | MulAssign | DivAssign | ModAssign | ExpAssign
             | AndAssign | OrAssign => Some(2),
             Tuple | Chain => None,
@@ -288,6 +288,14 @@ impl Operator {
             },
             Div => {
                 expect_operator_argument_amount(arguments.len(), 2)?;
+                arguments[0].as_float()?;
+                arguments[1].as_float()?;
+                Ok(Value::Float(
+                    arguments[0].as_float()? / arguments[1].as_float()?,
+                ))
+            },
+            IntDiv => {
+                expect_operator_argument_amount(arguments.len(), 2)?;
                 arguments[0].as_number()?;
                 arguments[1].as_number()?;
 
@@ -306,6 +314,14 @@ impl Operator {
                         arguments[0].as_number()? / arguments[1].as_number()?,
                     ))
                 }
+            },
+            Per => {
+                expect_operator_argument_amount(arguments.len(), 2)?;
+                arguments[0].as_float()?;
+                arguments[1].as_float()?;
+                Ok(Value::Float(
+                    arguments[0].as_float()? / arguments[1].as_float() * 100.0?,
+                ))
             },
             Mod => {
                 expect_operator_argument_amount(arguments.len(), 2)?;
