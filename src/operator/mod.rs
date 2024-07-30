@@ -21,6 +21,10 @@ pub enum Operator {
     Mul,
     /// A binary division operator.
     Div,
+    /// A binary integer division operator.
+    IntDiv,
+    /// A binary percentage operator.
+    Per,
     /// A binary modulo operator.
     Mod,
     /// A binary exponentiation operator.
