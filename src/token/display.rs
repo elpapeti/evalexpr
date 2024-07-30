@@ -10,7 +10,9 @@ impl fmt::Display for Token {
             Minus => write!(f, "-"),
             Star => write!(f, "*"),
             Slash => write!(f, "/"),
+            SlashSlash => write!(f, "//"),
             Percent => write!(f, "%"),
+            PercentPercent => write!(f, "%%"),
             Hat => write!(f, "^"),
 
             // Logic
@@ -64,7 +66,9 @@ impl fmt::Display for PartialToken {
             Minus => write!(f, "-"),
             Star => write!(f, "*"),
             Slash => write!(f, "/"),
+            SlashSlash => write!(f, "//"),
             Percent => write!(f, "%"),
+            PercentPercent => write!(f, "%%"),
             Hat => write!(f, "^"),
             Eq => write!(f, "="),
             ExclamationMark => write!(f, "!"),
