@@ -51,47 +51,47 @@ macro_rules! int_function {
 pub fn builtin_function(identifier: &str) -> Option<Function> {
     match identifier {
         // Log
-        "math::ln" => simple_math!(ln),
-        "math::log" => simple_math!(log, 2),
-        "math::log2" => simple_math!(log2),
-        "math::log10" => simple_math!(log10),
+        "ln" => simple_math!(ln),
+        "log" => simple_math!(log, 2),
+        "log2" => simple_math!(log2),
+        "log10" => simple_math!(log10),
         // Exp
-        "math::exp" => simple_math!(exp),
-        "math::exp2" => simple_math!(exp2),
+        "exp" => simple_math!(exp),
+        "exp2" => simple_math!(exp2),
         // Pow
-        "math::pow" => simple_math!(powf, 2),
+        "pow" => simple_math!(powf, 2),
         // Cos
-        "math::cos" => simple_math!(cos),
-        "math::acos" => simple_math!(acos),
-        "math::cosh" => simple_math!(cosh),
-        "math::acosh" => simple_math!(acosh),
+        "cos" => simple_math!(cos),
+        "acos" => simple_math!(acos),
+        "cosh" => simple_math!(cosh),
+        "acosh" => simple_math!(acosh),
         // Sin
-        "math::sin" => simple_math!(sin),
-        "math::asin" => simple_math!(asin),
-        "math::sinh" => simple_math!(sinh),
-        "math::asinh" => simple_math!(asinh),
+        "sin" => simple_math!(sin),
+        "asin" => simple_math!(asin),
+        "sinh" => simple_math!(sinh),
+        "asinh" => simple_math!(asinh),
         // Tan
-        "math::tan" => simple_math!(tan),
-        "math::atan" => simple_math!(atan),
-        "math::tanh" => simple_math!(tanh),
-        "math::atanh" => simple_math!(atanh),
-        "math::atan2" => simple_math!(atan2, 2),
+        "tan" => simple_math!(tan),
+        "atan" => simple_math!(atan),
+        "tanh" => simple_math!(tanh),
+        "atanh" => simple_math!(atanh),
+        "atan2" => simple_math!(atan2, 2),
         // Root
-        "math::sqrt" => simple_math!(sqrt),
-        "math::cbrt" => simple_math!(cbrt),
+        "sqrt" => simple_math!(sqrt),
+        "cbrt" => simple_math!(cbrt),
         // Hypotenuse
-        "math::hypot" => simple_math!(hypot, 2),
+        "hypot" => simple_math!(hypot, 2),
         // Rounding
         "floor" => simple_math!(floor),
         "round" => simple_math!(round),
         "ceil" => simple_math!(ceil),
         // Float special values
-        "math::is_nan" => float_is(FloatType::is_nan),
-        "math::is_finite" => float_is(FloatType::is_finite),
-        "math::is_infinite" => float_is(FloatType::is_infinite),
-        "math::is_normal" => float_is(FloatType::is_normal),
+        "is_nan" => float_is(FloatType::is_nan),
+        "is_finite" => float_is(FloatType::is_finite),
+        "is_infinite" => float_is(FloatType::is_infinite),
+        "is_normal" => float_is(FloatType::is_normal),
         // Absolute
-        "math::abs" => Some(Function::new(|argument| match argument {
+        "abs" => Some(Function::new(|argument| match argument {
             Value::Float(num) => Ok(Value::Float(num.abs())),
             Value::Int(num) => Ok(Value::Int(num.abs())),
             _ => Err(EvalexprError::expected_number(argument.clone())),
