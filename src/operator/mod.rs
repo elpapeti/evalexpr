@@ -317,10 +317,10 @@ impl Operator {
             },
             Per => {
                 expect_operator_argument_amount(arguments.len(), 2)?;
-                arguments[0].as_float()?;
-                arguments[1].as_float()?;
+                arguments[0].as_number()?;
+                arguments[1].as_number()?;
                 Ok(Value::Float(
-                    arguments[0].as_float()? / arguments[1].as_float()? * 100.0,
+                    arguments[0].as_number()? / arguments[1].as_number()? * 100.0,
                 ))
             },
             Mod => {
