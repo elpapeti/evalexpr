@@ -70,8 +70,12 @@ pub enum PartialToken {
     Star,
     /// A slash character '/'.
     Slash,
+    /// Two slash character '//'.
+    SlashSlash,
     /// A percent character '%'.
     Percent,
+    /// Two percent characters '%%'.
+    PercentPercent,
     /// A hat character '^'.
     Hat,
     /// A whitespace character, e.g. ' '.
