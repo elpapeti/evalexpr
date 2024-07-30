@@ -320,7 +320,7 @@ impl Operator {
                 arguments[0].as_number()?;
                 arguments[1].as_number()?;
                 Ok(Value::Float(
-                    (arguments[0].as_number()? / arguments[1].as_number()?) * 100.0,
+                    (arguments[0].as_number()? / arguments[1].as_number()? * 100.0).as_number(),
                 ))
             },
             Mod => {
