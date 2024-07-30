@@ -377,6 +377,7 @@ fn partial_tokens_to_tokens(mut tokens: &[PartialToken]) -> EvalexprResult<Vec<T
             },
             PartialToken::Slash => match second {
                 Some(PartialToken::Eq) => Some(Token::SlashAssign),
+                Some(PartialToken::Slash) => Some(Token::SlashSlash),
                 _ => {
                     cutoff = 1;
                     Some(Token::Slash)
@@ -384,6 +385,7 @@ fn partial_tokens_to_tokens(mut tokens: &[PartialToken]) -> EvalexprResult<Vec<T
             },
             PartialToken::Percent => match second {
                 Some(PartialToken::Eq) => Some(Token::PercentAssign),
+                Some(PartialToken::Percent) => Some(Token::PercentPercent),
                 _ => {
                     cutoff = 1;
                     Some(Token::Percent)
