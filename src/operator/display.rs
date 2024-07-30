@@ -14,7 +14,9 @@ impl Display for Operator {
             Neg => write!(f, "-"),
             Mul => write!(f, "*"),
             Div => write!(f, "/"),
-            Mod => write!(f, "%"),
+            IntDiv => write!(f, "//"),
+            Per => write!(f, "%"),
+            Mod => write!(f, "%%"),
             Exp => write!(f, "^"),
 
             Eq => write!(f, "=="),
