@@ -784,7 +784,9 @@ pub(crate) fn tokens_to_operator_tree(tokens: Vec<Token>) -> EvalexprResult<Node
             },
             Token::Star => Some(Node::new(Operator::Mul)),
             Token::Slash => Some(Node::new(Operator::Div)),
-            Token::Percent => Some(Node::new(Operator::Mod)),
+            Token::Slash => Some(Node::new(Operator::IntDiv)),
+            Token::Percent => Some(Node::new(Operator::Per)),
+            Token::PercentPercent => Some(Node::new(Operator::Mod)),
             Token::Hat => Some(Node::new(Operator::Exp)),
 
             Token::Eq => Some(Node::new(Operator::Eq)),
