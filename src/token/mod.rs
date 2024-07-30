@@ -12,7 +12,9 @@ pub enum Token {
     Minus,
     Star,
     Slash,
+    SlashSlash,
     Percent,
+    PercentPercent,
     Hat,
 
     // Logic
