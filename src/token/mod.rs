@@ -131,7 +131,9 @@ impl Token {
             Token::Minus => false,
             Token::Star => false,
             Token::Slash => false,
+            Token::SlashSlash => false,
             Token::Percent => false,
+            Token::PercentPercent => false,
             Token::Hat => false,
 
             Token::Eq => false,
@@ -175,7 +177,9 @@ impl Token {
             Token::Minus => false,
             Token::Star => false,
             Token::Slash => false,
+            Token::SlashSlash => false,
             Token::Percent => false,
+            Token::PercentPercent => false,
             Token::Hat => false,
 
             Token::Eq => false,
