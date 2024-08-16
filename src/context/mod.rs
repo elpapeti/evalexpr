@@ -258,12 +258,12 @@ impl Context for HashMapContext {
 impl ContextWithMutableVariables for HashMapContext {
     fn set_value(&mut self, identifier: String, value: Value) -> EvalexprResult<()> {
         if let Some(existing_value) = self.variables.get_mut(&identifier) {
-            if ValueType::from(&existing_value) == ValueType::from(&value) {
+            //if ValueType::from(&existing_value) == ValueType::from(&value) {
                 *existing_value = value;
                 return Ok(());
-            } else {
-                return Err(EvalexprError::expected_type(existing_value, value));
-            }
+            //} else {
+            //    return Err(EvalexprError::expected_type(existing_value, value));
+            //}
         }
 
         // Implicit else, because `self.variables` and `identifier` are not unborrowed in else
